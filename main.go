@@ -93,7 +93,7 @@ func getArticles() ([]Article, error) {
 func main() {
 	godotenv.Load(".env")
 
-	location := fmt.Sprintf("%v:%v@(%v)", os.Getenv("USER"), os.Getenv("DB_PSWD"), os.Getenv("HOST"))
+	location := fmt.Sprintf("%v:%v@(%v)", os.Getenv("DB_USER"), os.Getenv("DB_PSWD"), os.Getenv("HOST"))
 	// var articles []Article
 	var err error
 	DB, err = sqlx.Connect("mysql", location+"/blog?parseTime=true")
